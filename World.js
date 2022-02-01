@@ -1,5 +1,6 @@
 let tableauPositions = [0,32,64,96,128,160,192,224,256,288];
 let largeurCase = 16;
+let number = 1000;
 
 // Creation de la classe canvas
 class World {
@@ -9,7 +10,20 @@ class World {
     this.canvas = this.element.querySelector(".game-canvas");
     this.ctx = this.canvas.getContext("2d");
   } 
+  loop(){
+    const step = () => {
+      
+      console.log(number);
+      number++;
+      requestAnimationFrame(() => {
+        step();
+      })
+    }
+    step();
+  }
   init() {
+    this.loop();
+
     const image = new Image();
     image.onload = () => {
       this.ctx.drawImage(image,0,0)
@@ -17,19 +31,20 @@ class World {
     image.src = "./DemoLower.png";
  
     //Place some Game Objects!
+
     const hero = new GameObject({
-      x: 5,
+      x: 2,
       y: 6,
     })
     const npc1 = new GameObject({
-     x: 3,
+     x: 4,
      y: 4,
      src: "./npc1.png"
    })
  
    setTimeout(() => {
-     hero.sprite.draw(this.ctx);
-     npc1.sprite.draw(this.ctx);
+    hero.sprite.draw(this.ctx);
+    npc1.sprite.draw(this.ctx);
    }, 200)
  
  
