@@ -1,6 +1,5 @@
 let tableauPositions = [0,32,64,96,128,160,192,224,256,288];
 let largeurCase = 16;
-let number = 1000;
 
 // Creation de la classe canvas
 class World {
@@ -12,9 +11,6 @@ class World {
   } 
   loop(){
     const step = () => {
-      
-      console.log(number);
-      number++;
       requestAnimationFrame(() => {
         step();
       })

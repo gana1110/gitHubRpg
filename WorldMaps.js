@@ -17,3 +17,40 @@ class WorldMap {
 
     }
 }
+
+window.WorldMaps = {
+    DemoRoom: {
+        lowerSrc: "./DemoLower.png",
+        upperSrc: "./DemoUpper.png",
+        gameObjects:{
+            hero: new GameObject({
+            x: 2,
+            y: 6,
+            }),
+            npc1: new GameObject({
+                x: 4,
+                y: 4,
+                src: "./npc1.png"
+                }),
+            
+
+        }
+    },
+    Kitchen: {
+        lowerSrc: "./KitchenLower.png",
+        upperSrc: "./KithenUpper.png",
+        gameObjects:{
+            hero: new GameObject({
+            x: 2,
+            y: 6,
+            }),
+            npc1: new GameObject({
+                x: 4,
+                y: 4,
+                src: "./npc1.png"
+                }),
+            
+
+        }
+    },
+}
